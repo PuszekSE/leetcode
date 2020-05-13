@@ -4,7 +4,7 @@ object RemoveDigits {
 
   def removeKdigits(num: String, k: Int): String = {
     def skipLeadingZeros(num: String): String = {
-      if (num.indexOf(ZERO) == 0) {
+      if (!num.isEmpty && num.head.toString == ZERO) {
         skipLeadingZeros(num.tail)
       } else {
         num
