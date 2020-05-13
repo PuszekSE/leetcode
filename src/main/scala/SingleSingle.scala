@@ -22,7 +22,11 @@ object SingleSingle {
       }
     }
 
-    findSingle(0, nums.length - 1)
+    val length = nums.length
+    if (length == 1) nums(0)
+    else if (nums(0) != nums(1)) nums(0)
+    else if (nums(length - 1) != nums(length - 2)) nums(length - 1)
+    findSingle(0, length - 1)
   }
 
   def main(args: Array[String]): Unit = {
