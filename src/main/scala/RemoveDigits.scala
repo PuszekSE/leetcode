@@ -2,15 +2,15 @@ object RemoveDigits {
   val ZERO = "0"
   val EMPTY = ""
 
-  def removeKdigits(num: String, k: Int): String = {
-    def skipLeadingZeros(num: String): String = {
-      if (!num.isEmpty && num.head.toString == ZERO) {
-        skipLeadingZeros(num.tail)
-      } else {
-        num
-      }
+  def skipLeadingZeros(num: String): String = {
+    if (!num.isEmpty && num.head.toString == ZERO) {
+      skipLeadingZeros(num.tail)
+    } else {
+      num
     }
+  }
 
+  def removeKdigits(num: String, k: Int): String = {
     def removeDigits(num: String, k: Int): String = {
       if (num.length == k)
         ZERO
